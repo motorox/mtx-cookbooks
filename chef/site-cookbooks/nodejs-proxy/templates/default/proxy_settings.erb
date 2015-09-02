@@ -1,5 +1,0 @@
-<% %w{npm_config_proxy npm_config_https_proxy}.each do |var| %>
-<% if ENV[var] %>
-export <%= var %>="<%= ENV[var] %>"
-<% end %>
-<% end %>
