@@ -1,3 +1,19 @@
+#
+# Librarian Cheffile. 
+# See https://github.com/applicationsonline/librarian-chef
+
+# Monsoon Shelf site
 site "http://shelf.mo.sap.corp:8080/api/v1"
 
+# Example for Opscode Cookbooks references
+# (All Opscode Cookbooks are retrieved through the Monsoon shelf.)
+# Add the needed cookbooks below
+
+cookbook 'nodejs', :git => "https://github.com/redguide/nodejs.git"
 cookbook 'nginx'
+cookbook 'go-vim-dev'
+cookbook 'testcb'
+cookbook 'nodejs-proxy'
+cookbook 'sap-redisio'
+cookbook 'sap-postgresql'
+cookbook 'sap-proxy'

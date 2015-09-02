@@ -63,9 +63,9 @@ Monsoon::Readymade.configure do |readymade|
 
     template.provision :chef do |chef|
       chef.timeout   = 1200
-      chef.log_level = :debug
+      chef.log_level = :info
 
-      chef.add_recipe "ubuntu"
+      chef.add_recipe "go-vim-dev"
       chef.add_recipe "sap-golang"
     end
 
@@ -88,15 +88,26 @@ Monsoon::Readymade.configure do |readymade|
       chef.timeout   = 1200
       chef.log_level = :debug
 
-      chef.add_recipe "ubuntu"
+      chef.add_recipe "ruby"
+      chef.add_recipe "nginx"
+      chef.add_recipe "passenger"
+      chef.add_role   "application"
       chef.add_recipe "sap-golang"
+
+      chef.provision_attributes  = {
+        nginx: { port: "8081" }
+      }
     end
 
-#    template.volume :vol0 do |volume|
-#      volume.capacity = 1
-#      volume.add_tag "nfs", "yes"
-#      volume.add_tag "acl", "everyone"
-#    end
+    template.volume :vol0 do |volume|
+      volume.capacity = 1
+    end
+
+    template.volume :vol1 do |volume|
+      volume.capacity = 1
+      volume.add_tag "nfs", "yes"
+      volume.add_tag "acl", "everyone"
+    end
   end
 
 

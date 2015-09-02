@@ -1,0 +1,5 @@
+server {
+  listen <%= node[:nginx][:port] %> default;
+  server_name <%= node[:fqdn] %>;
+  root /srv/www/hello;
+}
