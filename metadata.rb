@@ -20,7 +20,6 @@ depends 'monsoon-search'
 depends 'phantomjs'
 depends 'ark', "0.4.0"
 depends 'nodejs'
-depends "nodejs-proxy"
 depends 'nginx'
 depends 'sap-redisio'
 depends 'sap-postgresql'
