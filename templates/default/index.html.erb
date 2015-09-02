@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<body>
+<h1>Hello Monsoon running on <%= node[:fqdn] %></h1>
+<h2>Hello Monsoon running on <%= node[:platform] %> - <%= node[:platform_version] %></h2>
+<h3>IP address : <%= node[:ipaddress] %></h3>
+<h3>MAC address: <%= node[:macaddress] %></h3>
+<h3>Host name  : <%= node[:hostname] %></h3>
+<h3>Domain name: <%= node[:domain] %></h3>
+<p><pre>
+	Recipes: <%= node[:recipes] %>
+	Roles  : <%= node[:roles] %>
+	Machine time: <%= node[:ohai_time] %>
+</pre></p>
+<p>Node attributes:
+    <pre>
+      <%= PP.pp(node.to_hash, "") %>
+    </pre>
+</p>
+</body>
+</html>
